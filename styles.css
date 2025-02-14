@@ -1,0 +1,126 @@
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: white;
+        --secondary-color: black;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: lightgray;
+}
+
+header {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+}
+
+p, h1,a {
+    color: var(--secondary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+body > p {
+    color: black;
+}
+
+#menuLines {
+    width: 2em;
+    height: 2em;
+    fill: var(--secondary-color);
+    margin: 5px;
+    margin-bottom: 2px;
+    
+}
+#menuLines:hover {
+    cursor: pointer;
+}
+
+#toggle {
+    display: none;
+}
+#toggle ~ label #menuLines, #toggle ~ #menuBarIcon {
+    transform: translate(0em);
+    transition: all .515s ease;
+}
+#toggle ~ label #rect1 {
+    transform: rotate(0deg);
+    transition: all .5s ease;
+    transform-origin: center;
+}
+#toggle ~ label #rect2 {
+    transform-origin: center;
+    transform: scale(1, 1);
+    transform: translate(0px);
+    transition-delay: .2s;
+}
+#toggle ~ label #rect3 {
+    transform: rotate(0deg);
+    transition: all .5s ease;
+    transform-origin: center;
+}
+#toggle ~ #menu {
+    transform: translate(0em);
+    transition: all .5s ease;
+}
+
+#toggle:checked ~ label #menuLines, #toggle:checked ~ #menuBarIcon {
+    transform: translate(12.1em);
+    transition: all .51s ease;
+    transition-delay: .2s;
+}
+#toggle:checked ~ label #rect1 {
+    transform: rotate(20deg);
+    transition: all .15s ease;
+    transform-origin: center;
+}
+#toggle:checked ~ label #rect2 {
+    transform-origin: center;
+    transform: scale(1.5, 1);
+    transform: translate(10px);
+    transition: all .15s ease;
+}
+#toggle:checked ~ label #rect3 {
+    transform: rotate(-20deg);
+    transition: all .15s ease;
+    transform-origin: center;
+
+}
+#toggle:checked ~ #menu {
+    transform: translate(15em);
+    transition: all .5s ease;
+    transition-delay: .2s;
+}
+
+@keyframes ROTATION {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}
+}
+
+#menu {
+    position: absolute;
+    height: 100vh;
+    left: -15em;
+    width: 15em;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.menuItem {
+    font-size: x-large;
+}
