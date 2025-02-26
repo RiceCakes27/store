@@ -124,3 +124,46 @@ body > p {
 .menuItem {
     font-size: x-large;
 }
+
+.product {
+    background-color: gray;
+    margin: 10px;
+    border-radius: 10px;
+    width: 10.64em;
+}
+
+#products {
+    align-items: flex-start;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+#products img {
+    margin: 5px;
+    height: 10em;
+    border-radius: 10px;
+}
+#products p {
+    margin-top: 2px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.4em;
+    margin-bottom: 0px;
+}
+#products a {
+    background-color: green;
+    border-radius: 4px;
+    text-align: center;
+    width: 9em;
+    line-height: 1.4em;
+    border-bottom: 10px;
+    display: inline-block;
+}
+#products a:hover {
+    background-color: rgb(0, 160, 0);
+}
