@@ -23,6 +23,7 @@ header {
     background-color: var(--primary-color);
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 p, h1, a, h3 {
@@ -198,6 +199,7 @@ body > p {
     width: 10.6em;
     height: 17.41em;
     border-radius: 10px;
+    position: fixed;
 }
 
 #productHolder {
@@ -211,8 +213,30 @@ body > p {
     width: 34em;
     height: 28em;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    justify-content: center;
 }
 #productImages img {
     margin: 10px;
     width: 20em;
+    height: 20em;
+}
+
+#back, #forward {
+    position: absolute;
+    height: 25px;
+    width: 30px;
+    top: 29em;
+}
+#back {
+    left:  1em;
+}
+#forward {
+    right: 1em;
+}
+
+button:hover {
+    cursor: pointer;
 }
