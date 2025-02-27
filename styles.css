@@ -1,18 +1,22 @@
 :root {
     --primary-color: black;
     --secondary-color: white;
+    --bg-color: rgb(87, 87, 87);
+    --product-color: rgb(46, 46, 46);
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --primary-color: white;
         --secondary-color: black;
+        --bg-color: lightgray;
+        --product-color: gray;
     }
 }
 
 body {
     margin: 0;
-    background-color: lightgray;
+    background-color: var(--bg-color);
 }
 
 header {
@@ -21,7 +25,7 @@ header {
     top: 0;
 }
 
-p, h1,a {
+p, h1, a, h3 {
     color: var(--secondary-color);
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
@@ -44,7 +48,6 @@ body > p {
     fill: var(--secondary-color);
     margin: 5px;
     margin-bottom: 2px;
-    
 }
 #menuLines:hover {
     cursor: pointer;
@@ -111,6 +114,11 @@ body > p {
     to {transform: rotate(90deg);}
 }
 
+#menuBarIcon {
+    margin-top: 6px;
+    /* fix this later */
+}
+
 #menu {
     position: absolute;
     height: 100vh;
@@ -125,25 +133,27 @@ body > p {
     font-size: x-large;
 }
 
-.product {
-    background-color: gray;
-    margin: 10px;
-    border-radius: 10px;
-    width: 10.64em;
-}
-
 #products {
     align-items: flex-start;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
 }
-#products img {
+
+.product {
+    background-color: var(--product-color);
+    margin: 10px;
+    border-radius: 10px;
+    width: 10.64em;
+}
+.product img {
     margin: 5px;
     height: 10em;
+    width: 10em;
     border-radius: 10px;
+    object-fit: contain;
 }
-#products p {
+.product p {
     margin-top: 2px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -155,15 +165,54 @@ body > p {
     min-height: 2.4em;
     margin-bottom: 0px;
 }
-#products a {
+.product .addToCart {
     background-color: green;
     border-radius: 4px;
     text-align: center;
     width: 9em;
     line-height: 1.4em;
-    border-bottom: 10px;
     display: inline-block;
+    position: relative;
+    /* this is a dumb way to center */
+    margin-left: 13px;
 }
-#products a:hover {
+.product .addToCart:hover {
     background-color: rgb(0, 160, 0);
+}
+.product h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#cart {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+#cart g path, #cart text {
+    fill: var(--secondary-color);
+}
+
+.clickProduct {
+    margin: 0px;
+    width: 10.6em;
+    height: 17.41em;
+    border-radius: 10px;
+}
+
+#productHolder {
+    display: flex; /* Enables horizontal layout */
+    align-items: flex-start; /* Aligns items vertically in the middle */
+    gap: 10px; /* Adds spacing between image and text */
+}
+#productImages {
+    background-color: lightgray;
+    margin: 10px;
+    width: 34em;
+    height: 28em;
+    border-radius: 10px;
+}
+#productImages img {
+    margin: 10px;
+    width: 20em;
 }
