@@ -207,6 +207,7 @@ body > p {
     align-items: flex-start; /* Aligns items vertically in the middle */
     gap: 10px; /* Adds spacing between image and text */
 }
+
 #productImages {
     background-color: lightgray;
     margin: 10px;
@@ -220,8 +221,18 @@ body > p {
 }
 #productImages img {
     margin: 10px;
-    width: 20em;
+    width: 25em;
     height: 20em;
+    object-fit: contain;
+}
+
+#images {
+    position: absolute;
+    bottom: 0em;
+}
+#images img {
+    width: 5em;
+    height: 5em;
 }
 
 #back, #forward {
@@ -231,7 +242,7 @@ body > p {
     top: 29em;
 }
 #back {
-    left:  1em;
+    left: 1em;
 }
 #forward {
     right: 1em;
