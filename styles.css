@@ -37,6 +37,7 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 body > p {
@@ -233,6 +234,9 @@ body > p {
 #images img {
     width: 5em;
     height: 5em;
+}
+#images .active {
+    border: 2px solid blue;
 }
 
 #back, #forward {

@@ -1,29 +1,33 @@
-let pageData;
-
-fetch('data.json').then(response => {
-    if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-})
-.then(data => pageData = data)  
-.catch(error => console.error('Failed to fetch data:', error)); 
-
+const images = document.getElementById('images');
+const imagesChildren = images.getElementsByTagName('img');
+const numPics = images.children.length;
 let i = 1;
+
 document.getElementById('back').addEventListener('click', function ()  {
-    //console.log(pageData[0].numPics);
     i--;
     if (i <= 0) {
-        i = pageData[0].numPics;
+        i = numPics;
     }
     setImages();
+    if (i == numPics) {
+        imagesChildren[0].classList.remove('active');
+    } else {
+        imagesChildren[i].classList.remove('active');
+    }
+    imagesChildren[i-1].classList.add('active');
 });
 document.getElementById('forward').addEventListener('click', function ()  {
     i++;
-    if (i > pageData[0].numPics) {
+    if (i > numPics) {
         i = 1;
     }
     setImages();
+    if (i == 1) {
+        imagesChildren[numPics-1].classList.remove('active');
+    } else {
+        imagesChildren[i-2].classList.remove('active');
+    }
+    imagesChildren[i-1].classList.add('active');
 });
 
 function setImages() {
@@ -31,5 +35,3 @@ function setImages() {
     .getElementsByTagName('img')[0]
     .src='images/img'+i+'.png';
 }
-
-console.log(document.getElementById('images').children.length)
