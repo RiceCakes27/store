@@ -3,7 +3,6 @@
     <head>
         <link rel="stylesheet" href="/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
     </head>
     <body>
         <header>
@@ -43,7 +42,7 @@
                 </svg>
             </label>
             <img id="menuBarIcon" src="https://placehold.co/100x30">
-            <a href="/cart">
+            <a href="cart">
                 <svg id="cart"
                     width="30"
                     height="30"
@@ -55,40 +54,27 @@
                         />
                     </g>
                     <text
-                        style="font-stretch:condensed;font-size:500px;font-family:Impact;"
+                        style="font-stretch:condensed;font-size:500px;font-family:Impact"
                         x="406.34714"
                         y="463.50763"
                         id="text"
                     >
                         <tspan
                             id="tspan"
-                            x="350.34714"
+                            style="text-anchor:middle"
+                            x="450.34714"
                             y="463.50763"
                         >0</tspan>
                     </text>
                 </svg>
             </a>
             <div id="menu">
-                <a href="/" class="menuItem">home</a>
+                <a href="#" class="menuItem">placeholder</a>
             </div>
         </header>
-        <div id="productHolder">
-            <div id="productImages">
-                <img src="images/img1.png" alt="sussy man">
-                <div id="images">
-                    <img class="active" src="images/img1.png">
-                    <img src="images/img2.png">
-                    <img src="images/img3.png">
-                </div>
-                <button onclick="backButton()" id="back">⮜</button>
-                <button onclick="forwardButton()" id="forward">⮞</button>
-            </div>
-            <div id="productDesc">
-                <h1>jerma</h1>
-                <p>this man is so sus</p>
-            </div>
+        <div id="products">
         </div>
-        <script type="text/javascript" src="/script.js"></script>
         <script type="text/javascript" src="/cartscript.js"></script>
+        <script type="text/javascript" src="cartviewscript.js"></script>
     </body>
 </html>

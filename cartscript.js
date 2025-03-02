@@ -1,6 +1,19 @@
-let cartItems = 1;
+if (!localStorage.getItem("cartNumItems")) {
+    localStorage.setItem("cartNumItems", 0);
+}
+let cartNumItems = localStorage.getItem("cartNumItems");
+document.getElementById('tspan').textContent = cartNumItems;
+
+let items = [];
+if (localStorage.getItem('cartItems')) {
+    items = JSON.parse(localStorage.cartItems);
+}
 
 function addToCart(item) {
+    items.push(item);
+    cartNumItems++;
     console.log(item+" item added to cart");
-    document.getElementById('tspan').textContent = cartItems++;
+    localStorage.setItem("cartItems", JSON.stringify(items));
+    localStorage.setItem("cartNumItems", cartNumItems);
+    document.getElementById('tspan').textContent = cartNumItems;
 }
