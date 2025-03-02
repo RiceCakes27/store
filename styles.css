@@ -168,6 +168,7 @@ body > p {
     margin-bottom: 0px;
 }
 .product .addToCart {
+    user-select: none;
     background-color: green;
     border-radius: 4px;
     text-align: center;
@@ -204,13 +205,13 @@ body > p {
 }
 
 #productHolder {
-    display: flex; /* Enables horizontal layout */
-    align-items: flex-start; /* Aligns items vertically in the middle */
-    gap: 10px; /* Adds spacing between image and text */
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 #productImages {
-    background-color: lightgray;
+    background-color: var(--product-color);
     margin: 10px;
     width: 34em;
     height: 28em;
