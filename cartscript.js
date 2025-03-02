@@ -10,7 +10,7 @@ if (localStorage.getItem('cartItems')) {
 }
 
 function isDupe(item) {
-    for (let i = 0; i < cartNumItems; i++) {
+    for (let i = 0; i < items.length; i++) {
         if (item == items[i]) {
             return true
         }
@@ -20,6 +20,8 @@ function isDupe(item) {
 function addToCart(item) {
     if (!isDupe(item)) {
         items.push(item);
+    } else {
+
     }
     cartNumItems++;
     console.log(item+" item added to cart");
