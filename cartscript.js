@@ -9,8 +9,18 @@ if (localStorage.getItem('cartItems')) {
     items = JSON.parse(localStorage.cartItems);
 }
 
+function isDupe(item) {
+    for (let i = 0; i < cartNumItems; i++) {
+        if (item == items[i]) {
+            return true
+        }
+    }
+}
+
 function addToCart(item) {
-    items.push(item);
+    if (!isDupe(item)) {
+        items.push(item);
+    }
     cartNumItems++;
     console.log(item+" item added to cart");
     localStorage.setItem("cartItems", JSON.stringify(items));
