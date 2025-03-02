@@ -20,8 +20,11 @@ function isDupe(item) {
 function addToCart(item) {
     if (!isDupe(item)) {
         items.push(item);
+        localStorage.setItem(item, 1);
     } else {
-
+        var idk = localStorage.getItem(item);
+        idk++;
+        localStorage.setItem(item, idk);
     }
     cartNumItems++;
     console.log(item+" item added to cart");

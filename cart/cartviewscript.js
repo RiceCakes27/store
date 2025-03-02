@@ -5,6 +5,7 @@ if (localStorage.getItem('cartItems')) {
                 <div class="product">
                     <img src="../`+items[i]+`/images/img1.png">
                     <p>`+items[i]+`</p>
+                    <h1>`+localStorage.getItem(items[i])+` in cart</h1>
                 </div>
             `;
     }
